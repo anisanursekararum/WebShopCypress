@@ -1,4 +1,5 @@
 import authPage from "../../support/pages/authPage"
+const data = require("../../fixtures/data.json")
 
 describe('Authorization', () => {
   beforeEach(() => {
@@ -10,7 +11,7 @@ describe('Authorization', () => {
   it('Register mandatory field empty', () => {
     authPage.clickMenuRegister()
     authPage.clickButtonRegister()
-    authPage.verifyMessages()
+    authPage.verifyRegisterFailed()
   })
 
   it('Email registered', () => {
@@ -18,8 +19,8 @@ describe('Authorization', () => {
     authPage.genderRadio()
     authPage.inputFirstName()
     authPage.inputLastName()
-    authPage.inputRegisteredEmail()
-    authPage.inputPass()
+    authPage.inputEmail(data.emailRegistered)
+    authPage.inputPass(data.password)
     authPage.inputConfPass()
     authPage.clickButtonRegister()
     authPage.verifyEmailRegistered()
@@ -30,12 +31,27 @@ describe('Authorization', () => {
     authPage.genderRadio()
     authPage.inputFirstName()
     authPage.inputLastName()
-    authPage.inputEmail()
-    authPage.inputPass()
+    authPage.inputEmailRegister()
+    authPage.inputPass(data.password)
     authPage.inputConfPass()
     authPage.clickButtonRegister()
     authPage.verSuccessRegis()
     authPage.clickButtonLogout()
+  })
+
+  //login use dynamic data in fixtures
+  it('Login negative case use data from fixtures', () => {
+    cy.fixture('userDynamic').its('data').then(user => {
+      user.forEach((user) => {
+        const email = user.email
+        const password = user.password
+        authPage.clickMenuLogin()
+        authPage.inputEmail(email)
+        authPage.inputPass(password)
+        authPage.clickButtonLogin()
+        authPage.verifyLoginFailed()
+      })
+    })
   })
 
 })

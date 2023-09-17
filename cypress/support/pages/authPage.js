@@ -25,57 +25,73 @@ class AuthPage {
   registerComplete = '.result'
   logout = '.ico-logout'
   emailRegistered = '.validation-summary-errors > ul > li'
-
-
+  loginMenu = '.ico-login'
+  loginButton = 'form > .buttons > .button-1'
+  loginMessages = '.validation-summary-errors > span'
+  
+  
   clickMenuRegister() {
     cy.button(this.registerMenu)
     cy.url().should('contain', 'register')
   }
-
+  
+  clickMenuLogin() {
+    cy.button(this.loginMenu)
+    cy.url().should('contain', 'login')
+  }
+  
   clickButtonRegister() {
     cy.button(this.registerButton)
   }
-
-  verifyMessages() {
+  
+  clickButtonLogin() {
+    cy.button(this.loginButton)
+  }
+  
+  verifyRegisterFailed() {
     cy.get(this.firstnameMessages).should('have.text', messages.firstname)
     cy.get(this.lastnameMessages).should('have.text', messages.lastname)
     cy.get(this.emailMessages).should('have.text', messages.email)
     cy.get(this.passMessages).should('have.text', messages.password)
     cy.get(this.confPassMessages).should('have.text', messages.password)
   }
-
+  
   verifyEmailRegistered() {
     cy.get(this.emailRegistered).should('have.text', messages.emailRegistered)
   }
-
+  
+  verifyLoginFailed() {
+    cy.get(this.loginMessages).should('have.text', messages.login)
+  }
+  
   genderRadio() {
     cy.get(this.gender).check(data.genderM).should('have.value', data.genderM)
   }
-
+  
   inputFirstName() {
     cy.input(this.firstname, data.firstname)
   }
-
+  
   inputLastName() {
     cy.input(this.lastname, data.lastname)
   }
-
-  inputEmail() {
+  
+  inputEmailRegister() {
     cy.input(this.email, currentDate.toString()+"gmail.com")
     cy.button(this.fieldEmail)
     cy.get(this.wrongEmail).should('have.text', messages.wrongEmail)
     cy.get(this.email).clear()
     cy.input(this.email, "arum"+randomNumber+"@gmail.com")
   }
-
-  inputRegisteredEmail() {
-    cy.input(this.email, data.emailRegistered)
+  
+  inputEmail(value) {
+    cy.input(this.email, value)
   }
-
-  inputPass() {
-    cy.input(this.pass, data.password)
+  
+  inputPass(value) {
+    cy.input(this.pass, value)
   }
-
+  
   inputConfPass() {
     cy.input(this.confPass, data.wrongPass)
     cy.button(this.fieldPass)
@@ -83,7 +99,7 @@ class AuthPage {
     cy.get(this.confPass).clear()
     cy.input(this.confPass, data.password)
   }
-
+  
   verSuccessRegis() {
     cy.get(this.registerComplete).should('be.visible').should('have.contain', messages.registerComplete)
     cy.url().should('contain', data.registerResult)
@@ -93,7 +109,7 @@ class AuthPage {
     cy.button(this.logout)
     cy.url().should('include', data.url)
   }
-
+  
 }
 
 export default new AuthPage()
