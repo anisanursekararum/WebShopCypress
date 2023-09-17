@@ -24,6 +24,7 @@ class AuthPage {
   wrongPass = '.field-validation-error > span'
   registerComplete = '.result'
   logout = '.ico-logout'
+  emailRegistered = '.validation-summary-errors > ul > li'
 
 
   clickMenuRegister() {
@@ -41,6 +42,10 @@ class AuthPage {
     cy.get(this.emailMessages).should('have.text', messages.email)
     cy.get(this.passMessages).should('have.text', messages.password)
     cy.get(this.confPassMessages).should('have.text', messages.password)
+  }
+
+  verifyEmailRegistered() {
+    cy.get(this.emailRegistered).should('have.text', messages.emailRegistered)
   }
 
   genderRadio() {
@@ -61,6 +66,10 @@ class AuthPage {
     cy.get(this.wrongEmail).should('have.text', messages.wrongEmail)
     cy.get(this.email).clear()
     cy.input(this.email, "arum"+randomNumber+"@gmail.com")
+  }
+
+  inputRegisteredEmail() {
+    cy.input(this.email, data.emailRegistered)
   }
 
   inputPass() {

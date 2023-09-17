@@ -13,7 +13,19 @@ describe('Authorization', () => {
     authPage.verifyMessages()
   })
 
-  it.only('Register success', () => {
+  it('Email registered', () => {
+    authPage.clickMenuRegister()
+    authPage.genderRadio()
+    authPage.inputFirstName()
+    authPage.inputLastName()
+    authPage.inputRegisteredEmail()
+    authPage.inputPass()
+    authPage.inputConfPass()
+    authPage.clickButtonRegister()
+    authPage.verifyEmailRegistered()
+  })
+
+  it('Register success', () => {
     authPage.clickMenuRegister()
     authPage.genderRadio()
     authPage.inputFirstName()
@@ -25,4 +37,5 @@ describe('Authorization', () => {
     authPage.verSuccessRegis()
     authPage.clickButtonLogout()
   })
+
 })
