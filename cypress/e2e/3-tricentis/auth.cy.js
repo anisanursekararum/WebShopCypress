@@ -8,6 +8,8 @@ describe('Authorization', () => {
 
   //register
   it('Register mandatory field empty', () => {
-    authPage.clickRegister()
+    authPage.clickMenuRegister()
+    authPage.clickButtonRegister()
+    authPage.verifyMessages()
   })
 })

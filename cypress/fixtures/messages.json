@@ -1,0 +1,6 @@
+{
+  "firstname" : "First name is required.",
+  "lastname" : "Last name is required.",
+  "email" : "Email is required.",
+  "password" : "Password is required."
+}
