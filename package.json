@@ -1,0 +1,15 @@
+{
+  "name": "webshopcypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tricentis": "npx cypress run --browser chrome --spec 'cypress/e2e/3-tricentis/*'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "anisanursekararum",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.2.0"
+  }
+}
