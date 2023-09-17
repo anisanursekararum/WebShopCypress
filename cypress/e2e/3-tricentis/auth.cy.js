@@ -54,4 +54,19 @@ describe('Authorization', () => {
     })
   })
 
+  it('Successfully login', () => {
+    authPage.clickMenuLogin()
+    authPage.inputEmail(data.emailRegistered)
+    authPage.inputPass(data.password)
+    authPage.clickButtonLogin()
+    authPage.verSuccessLogin()
+    authPage.clickButtonLogout()
+  })
+
+  it('Login form empy', () => {
+    authPage.clickMenuLogin()
+    authPage.clickButtonLogin()
+    authPage.verifyLoginFailed()
+  })
+
 })

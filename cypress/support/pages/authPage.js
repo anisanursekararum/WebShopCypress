@@ -28,6 +28,7 @@ class AuthPage {
   loginMenu = '.ico-login'
   loginButton = 'form > .buttons > .button-1'
   loginMessages = '.validation-summary-errors > span'
+  loginComplete = '.header-links > ul > :nth-child(1) > .account'
   
   
   clickMenuRegister() {
@@ -103,6 +104,10 @@ class AuthPage {
   verSuccessRegis() {
     cy.get(this.registerComplete).should('be.visible').should('have.contain', messages.registerComplete)
     cy.url().should('contain', data.registerResult)
+  }
+
+  verSuccessLogin() {
+    cy.get(this.loginComplete).should('have.attr', 'href', '/customer/info').should('have.text', data.emailRegistered)
   }
   
   clickButtonLogout() {
