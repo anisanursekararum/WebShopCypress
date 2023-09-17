@@ -2,5 +2,8 @@
   "firstname" : "First name is required.",
   "lastname" : "Last name is required.",
   "email" : "Email is required.",
-  "password" : "Password is required."
+  "password" : "Password is required.",
+  "wrongEmail" : "Wrong email",
+  "notMatchPass" : "The password and confirmation password do not match.",
+  "registerComplete" : "Your registration completed"
 }
