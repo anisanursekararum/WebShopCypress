@@ -10,4 +10,12 @@ describe('Home Page', () => {
     homePage.search(data.productKeyword)
     homePage.verifyProduct(data.productKeyword)
   })
+  
+  it('Top Menu', () => {
+    homePage.topMenu()
+  })
+
+  it('Categories', () => {
+    homePage.categoriesSide()
+  })
 })
