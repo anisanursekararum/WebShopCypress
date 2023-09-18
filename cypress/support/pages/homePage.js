@@ -1,4 +1,6 @@
 const data = require('../../fixtures/data.json')
+const messages = require("../../fixtures/messages.json")
+
 
 class HomePage {
 
@@ -15,33 +17,32 @@ class HomePage {
     cy.get(this.searchKeyword).should('be.visible').should('have.value', product)
   }
 
-  verifyProduct() {
+  verifyProduct(product) {
     cy.url().should('contain', 'search')
-    cy.get(this.productTitle).should('contain.text', data.productKeyword).should('have.attr', 'href')
+    cy.get(this.productTitle).should('contain.text', product).should('have.attr', 'href')
   }
 
   topMenu() {
     cy.get(this.menu).find('li')
-      .should('contain', data.menu1).should('exist')
-      .should('contain', data.menu2).should('exist')
-      .should('contain', data.menu3).should('exist')
-      .should('contain', data.menu4).should('exist')
-      .should('contain', data.menu5).should('exist')
-      .should('contain', data.menu6).should('exist')
-      .should('contain', data.menu7).should('exist')
+      .should('contain', messages.menu1).should('exist')
+      .should('contain', messages.menu2).should('exist')
+      .should('contain', messages.menu3).should('exist')
+      .should('contain', messages.menu4).should('exist')
+      .should('contain', messages.menu5).should('exist')
+      .should('contain', messages.menu6).should('exist')
+      .should('contain', messages.menu7).should('exist')
   }
 
   categoriesSide() {
     cy.get(this.categories).find('li')
-      .should('contain', data.menu1).should('exist')
-      .should('contain', data.menu2).should('exist')
-      .should('contain', data.menu3).should('exist')
-      .should('contain', data.menu4).should('exist')
-      .should('contain', data.menu5).should('exist')
-      .should('contain', data.menu6).should('exist')
-      .should('contain', data.menu7).should('exist')
+      .should('contain', messages.menu1).should('exist')
+      .should('contain', messages.menu2).should('exist')
+      .should('contain', messages.menu3).should('exist')
+      .should('contain', messages.menu4).should('exist')
+      .should('contain', messages.menu5).should('exist')
+      .should('contain', messages.menu6).should('exist')
+      .should('contain', messages.menu7).should('exist')
   }
-
 
 }
 
