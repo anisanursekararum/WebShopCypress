@@ -16,6 +16,12 @@ describe('Transaction', () => {
     transactionPage.updateCart()
   })
 
+  it('Add to cart and then remove', () => {
+    homePage.search(data.product1)
+    homePage.verifyProduct(data.product1)
+    transactionPage.addButton()
+    transactionPage.clickCartMenu()
+  })
 
 
 })

@@ -36,6 +36,12 @@ class TransactionPage {
     cy.get(this.productPrice).should('have.text', data.price)
     // cy.get(this.totalProductPrice).should('have.text', (data.price*data.qty))
   }
+
+  removeProduct() {
+    cy.get(this.removeCheckbox).check()
+    cy.button(this.updateCartButton)
+    cy.get(this.removeProduct).should('have.text', messages.cartEmpty)
+  }
   
 
 }
