@@ -1,6 +1,6 @@
 # WebShopCypress
 
-Website for testing https://demowebshop.tricentis.com/orderdetails/1511064
+Website for testing https://demowebshop.tricentis.com
 
 1. Auth
    1. Failed register because mandatory field empty
