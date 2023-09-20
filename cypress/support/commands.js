@@ -17,6 +17,7 @@ Cypress.Commands.add('input', (locator, value) => {
 Cypress.Commands.add('button', (locator) => { 
   cy.get(locator).should('be.visible').click()
 })
+
 //
 //
 // -- This is a child command --

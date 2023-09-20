@@ -10,5 +10,17 @@
   "product1" : "Laptop",
   "product2" : "Blue Jeans",
   "price" : "1590.00",
-  "qty" : 3
+  "qty" : 3,
+  "country" : "Indonesia",
+  "valueCountry" : 42,
+  "city" : "Surabaya",
+  "address" : "Jalan Imam Bonjol 134",
+  "zip" : "678675",
+  "phone" : "+62819778450",
+  "cc" : "Payments.Manual",
+  "ccVisa" : "Visa",
+  "ccNo" : "4111 1111 1111 1111",
+  "ccCode" : "9134",
+  "paymentType" : "Credit Card",
+  "shippingType" : "Next Day Air"
 }
