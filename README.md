@@ -31,7 +31,7 @@ Opening cypress (open in folder 3-tricentis)
 npx cypress open
 ```
 
-Run Test Suite Tricentis
+Run Test Suite Tricentis Headless
 
 ```sh
 npm run tricentis
