@@ -7,8 +7,8 @@ describe('Home Page', () => {
     cy.url().should('contain', 'tricentis')
   })
   it('Search', () => {
-    homePage.search(data.productKeyword)
-    homePage.verifyProduct(data.productKeyword)
+    homePage.search(data.product1)
+    homePage.verifyProduct(data.product1)
   })
   
   it('Top Menu', () => {
