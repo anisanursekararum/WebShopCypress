@@ -18,6 +18,13 @@ Website for testing https://demowebshop.tricentis.com/orderdetails/1511064
    2. Add to cart and then remove
    3. Checkout and payment
 
+After successfully clone this repository, run this command
+
+```sh
+npm init
+npm install cypress --save-dev
+```
+
 Opening cypress (open in folder 3-tricentis)
 
 ```sh
